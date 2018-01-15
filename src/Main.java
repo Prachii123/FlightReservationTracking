@@ -39,14 +39,22 @@ public class Main {
         f.add1Passenger();
         f.add1Passenger(2);
         f.add1Passenger(p1);
-
         System.out.println("Total number of passengers "+f.getPassengers());
-
         short threeBags = 3;
         f.add1Passenger(threeBags,2);
         f.add1Passenger(p2,1);
-
         System.out.println("Total number of passengers "+f.getPassengers());
+
+        Flight f1 = new Flight();
+        Passenger janet = new Passenger(0,1);
+        Passenger john = new Passenger(0,2);
+        f1.add1Passengers(janet,john);
+
+        Passenger fred = new Passenger(0,2);
+        Passenger sarah = new Passenger(0,2);
+        Passenger susie = new Passenger(0,0);
+        f1.add1Passengers(fred,sarah,susie);
+        System.out.println("Total number of passengers "+f1.getPassengers());
 
 
     }
