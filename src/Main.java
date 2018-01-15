@@ -7,9 +7,9 @@ public class Main {
         Flight flight2 = new Flight();
         Flight flight3 = null;
 
-        flight2.add1Passenger();
-        flight1.add1Passenger();
-        flight1.add1Passenger();
+       // flight2.add1Passenger();
+        //flight1.add1Passenger();
+        //flight1.add1Passenger();
 
         //flight2 = flight1;
 
@@ -31,8 +31,22 @@ public class Main {
         flight3.swapNumbers(val1,val2);
         System.out.println("inside SwapNumbers of Main class  "+val1.getFlightNumber() + "   "+val2.getFlightNumber());
 
+        Flight f = new Flight();
+        System.out.println(f.toString());
+        Passenger p1 = new Passenger(0,1);
+        Passenger p2 = new Passenger(0,2);
 
+        f.add1Passenger();
+        f.add1Passenger(2);
+        f.add1Passenger(p1);
 
+        System.out.println("Total number of passengers "+f.getPassengers());
+
+        short threeBags = 3;
+        f.add1Passenger(threeBags,2);
+        f.add1Passenger(p2,1);
+
+        System.out.println("Total number of passengers "+f.getPassengers());
 
 
     }
