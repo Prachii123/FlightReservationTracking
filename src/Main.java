@@ -82,13 +82,16 @@ public class Main {
         System.out.println("### cf1.seats "+cf1.seats);
         System.out.println("### cf1.getType() "+cf1.getType());
 
-        Flight f22 = cf1;//new CargoFlight();
+        Flight f22 = new CargoFlight();//cf1;//new CargoFlight();
         System.out.println("### f22.seats "+f22.seats);
         System.out.println("### f22.getType() "+f22.getType());
         f22.add1Passenger(); // add1Passenger will call add1Passenger of Flight class, hasSeating will check seats from Flight call, which is wrong, we end up in adding 150 Passengers in a CargoFlight class.
         cf1.add1Passenger(); // it will call add1Passenger in Flight and seats from Flight as well
         // Fields hide base class fields with same name. Idea of hiding fields is v dangerous, instead we can use method overridding.
 
+        System.out.println(f11.getSeats());
+        System.out.println(cf1.getSeats());
+        System.out.println(f22.getSeats());
 
 
     }

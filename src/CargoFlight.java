@@ -3,6 +3,15 @@ public class CargoFlight extends Flight {
     float usedCargoSpace;
     int seats = 12;
 
+    @Override
+    public int getSeats() {
+        return seats;
+    }
+    @Override
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
     public void add1package(float h, float w, float d) {
         double size = h * w * d;
         if(hasCargoSpace(size))

@@ -90,11 +90,11 @@ public class Flight {
     }
 
     private boolean hasSeating() {
-        return passengers < seats;
+        return passengers < getSeats();
     }
 
     private boolean hasSeating(int count) {
-        return passengers + count <= seats;
+        return passengers + count <= getSeats();
     }
 
     private boolean hasCarryOnSpace(int carryOns) {
