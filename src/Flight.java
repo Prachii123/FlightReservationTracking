@@ -1,7 +1,7 @@
 public class Flight {
 
     private int passengers;
-    private int seats;
+    public int seats;
     private int flightNumber;
     private char flightClass;
     int totalCheckedBags;
@@ -32,6 +32,8 @@ public class Flight {
     public void setFlightClass(char flightClass) {
         this.flightClass = flightClass;
     }
+
+    public String getType() { return "Flight"; }
 
     Flight() {
         seats = 150;
