@@ -1,4 +1,4 @@
-public class Passenger {
+final public class Passenger {
 
     private int checkedBags;
     private int freeBags;

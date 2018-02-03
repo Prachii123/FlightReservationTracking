@@ -60,7 +60,7 @@ public class Main {
             From this point onwards we are doing coding for class inheritance chapter -09
          */
 
-        CargoFlight cf = new CargoFlight();
+        /*CargoFlight cf = new CargoFlight();
         cf.add1package(1.0f,2.5f,3.9f);
         Passenger janeCF = new Passenger(0,2);
         cf.add1Passenger(janeCF);
@@ -93,6 +93,49 @@ public class Main {
         System.out.println(cf1.getSeats());
         System.out.println(f22.getSeats());
 
+        // object calss cahpter 9
+        Object[] stuff = new Object[3];
+       stuff[0] = new Flight();
+       stuff[1] = new Passenger(0,2);
+       stuff[2] = new CargoFlight();
+
+        Object o = new Passenger();
+        o = new Flight[5];
+        o = new CargoFlight();
+
+        if(o instanceof CargoFlight) {
+           CargoFlight cf2 = (CargoFlight)o;
+           cf2.add1package(1.0f,2.5f,3.0f);
+    }*/
+
+    // chapter -9 equality
+
+        Flight flight1 = new Flight(175);
+        Flight flight2 = new Flight(175);
+
+        flight1 = flight2;
+
+        if(flight1 == flight2)
+            System.out.println("equals");
+         else
+            System.out.println("not equals");
+
+        if(flight1.equals(flight2))
+            System.out.println("equals");
+        else
+            System.out.println("not equals");
+
+        Passenger p = new Passenger();
+        if(flight1.equals(p))
+            System.out.println("equals");
+        else
+            System.out.println("not equals");
+
+        Flight f175 = new Flight(175);
+        CargoFlight cf = new CargoFlight();
+        CargoFlight cf249 = new CargoFlight(249);
+        CargoFlight cf85 = new CargoFlight(85,2000.0f);
+        CargoFlight cfBig = new CargoFlight(5000.0f);
 
     }
 }

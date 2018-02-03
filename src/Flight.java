@@ -138,4 +138,18 @@ public class Flight {
                 ", flightNumber=" + flightNumber +
                 '}';
     }
+    /*
+       The base class object implements a version of equals that checks to see if two references pont to the same object. i.e.e it does reference comparision.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if(super.equals(o))
+            return true;
+        if(!(o instanceof Flight))
+            return false;
+        Flight other = (Flight) o;
+        return flightNumber == other.flightNumber &&
+                flightClass == other.flightClass;
+
+    }
 }

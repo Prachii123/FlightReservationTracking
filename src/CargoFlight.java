@@ -12,7 +12,7 @@ public class CargoFlight extends Flight {
         this.seats = seats;
     }
 
-    public void add1package(float h, float w, float d) {
+    public final void add1package(float h, float w, float d) {
         double size = h * w * d;
         if(hasCargoSpace(size))
             usedCargoSpace += size;
@@ -29,6 +29,21 @@ public class CargoFlight extends Flight {
 
     private void handleNoSpace() {
         System.out.println("Not enough space");
+    }
+
+    public CargoFlight(){}
+
+    public CargoFlight(int flightNumber){
+        super(flightNumber);
+    }
+
+    public CargoFlight(int flightNumber, float maxCargoSpace){
+        this(flightNumber);
+        this.maxCargoSpace = maxCargoSpace;
+    }
+
+    public CargoFlight(float maxCargoSpace){
+        this.maxCargoSpace = maxCargoSpace;
     }
 
 }
