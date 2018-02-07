@@ -1,5 +1,7 @@
 public class Flight {
 
+    static final int MAX_FAA_SEATS = 550;
+
     private int passengers;
     public int seats;
     private int flightNumber;
@@ -7,6 +9,9 @@ public class Flight {
     int totalCheckedBags;
     int maxCarryOns = seats * 2;
     int totalCaaryOns;
+
+    Integer wrapperFlightNumber;
+    Character wrapperflightClass;
 
     public int getPassengers() {
         return passengers;
@@ -18,7 +23,10 @@ public class Flight {
         return seats;
     }
     public void setSeats(int seats) {
+        if ( seats <= MAX_FAA_SEATS)
         this.seats = seats;
+        //else
+            //handle Error
     }
     public int getFlightNumber() {
         return flightNumber;
@@ -130,14 +138,38 @@ public class Flight {
         System.out.println("inside SwapNumbers of Flight class  "+i + "   "+j);
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Flight{" +
                 "passengers=" + passengers +
                 ", seats=" + seats +
                 ", flightNumber=" + flightNumber +
                 '}';
+    }*/
+
+   // @Override // meaningfull representation of a Object as a String.
+    /*public String toString(){
+       if(flightNumber > 0)
+           return "Flight # " + flightNumber;
+       else
+           return "Flight Class " + flightClass;
+
+    }*/
+
+    /*
+    this toString() is just for wrapper variable Demo/usages.
+     */
+    @Override
+    public String toString(){
+            if(wrapperFlightNumber != null)
+                return "Flight # " + flightNumber;
+            else if(wrapperflightClass != null)
+                return "Flight Class " + flightClass;
+            else
+                return "Flight identity not set";
     }
+
+
     /*
        The base class object implements a version of equals that checks to see if two references pont to the same object. i.e.e it does reference comparision.
      */

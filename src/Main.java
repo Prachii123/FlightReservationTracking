@@ -137,5 +137,25 @@ public class Main {
         CargoFlight cf85 = new CargoFlight(85,2000.0f);
         CargoFlight cfBig = new CargoFlight(5000.0f);
 
+        System.out.println("My Flight is "+ f175);
+
+        StringBuilder sb = new StringBuilder(40);
+        String location = "Florida";
+
+        sb.append(" I Flew to ");
+        sb.append(location);
+        sb.append(" on ");
+        sb.append(f175);
+        int time = 9;
+        System.out.println(sb.toString());
+
+        int pos = sb.length() - " on ".length() - f175.toString().length();
+        sb.insert(pos," at ");
+        sb.insert(pos +4, time);
+        System.out.println(sb.toString());
+
+        CrewMember judy = new CrewMember(FlightCrewJob.CoPilot);
+        judy.setJob(FlightCrewJob.Pilot);
+
     }
 }
