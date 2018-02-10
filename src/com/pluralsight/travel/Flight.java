@@ -3,8 +3,9 @@ package com.pluralsight.travel;//package com.pluralsight.travel;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 
-public class Flight implements Comparable<Flight>{
+public class Flight implements Comparable<Flight>, Iterable<Person>{
 
     static final int MAX_FAA_SEATS = 550;
 
@@ -20,6 +21,25 @@ public class Flight implements Comparable<Flight>{
 
     Integer wrapperFlightNumber;
     Character wrapperflightClass;
+
+    private CrewMember[] crew;
+    private Passenger[] roster;
+
+    public CrewMember[] getCrew() {
+        return crew;
+    }
+
+    public void setCrew(CrewMember[] crew) {
+        this.crew = crew;
+    }
+
+    public Passenger[] getRoster() {
+        return roster;
+    }
+
+    public void setRoster(Passenger[] roster) {
+        this.roster = roster;
+    }
 
     public int getPassengers() {
         return passengers;
@@ -230,5 +250,9 @@ public class Flight implements Comparable<Flight>{
 
     public int compareTo(Flight f) {
        return flightTime - f.flightTime;
+    }
+
+    public Iterator<Person> iterator() {
+        return new FlightIterator(crew, roster);
     }
 }

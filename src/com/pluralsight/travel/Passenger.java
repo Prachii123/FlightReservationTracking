@@ -1,6 +1,6 @@
 package com.pluralsight.travel;
 
-public class Passenger implements Comparable<Passenger>{
+public class Passenger extends Person implements Comparable<Passenger> {
 
    private int checkedBags;
    private final int freeBags;
@@ -9,7 +9,8 @@ public class Passenger implements Comparable<Passenger>{
    private int memberLevel; // 3(platinum), 2(Gold), 1(silver)
    private int memberDays;
 
-    public void setLevelAndDays(int level, int memberDays) {
+    public void setLevelAndDays(int level, int memberDays, String name) {
+        this.name = name;
         this.memberLevel = level;
         this.memberDays = memberDays;
     }

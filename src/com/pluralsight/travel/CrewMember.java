@@ -1,6 +1,6 @@
 package com.pluralsight.travel;
 
-public class CrewMember {
+public class CrewMember extends Person{
 
     private FlightCrewJob job;
 
@@ -10,5 +10,17 @@ public class CrewMember {
 
     public void setJob(FlightCrewJob job) {
         this.job = job;
+    }
+
+    public CrewMember() {};
+
+    public CrewMember(FlightCrewJob job, String name) {
+        this.name = name;
+        this.job = job;
+
+    }
+
+    public String addCrewMembers() {
+        return job + " " +name;
     }
 }
