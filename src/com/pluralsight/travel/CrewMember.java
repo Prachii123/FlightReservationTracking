@@ -1,6 +1,6 @@
 package com.pluralsight.travel;
 
-public class CrewMember extends Person{
+public class CrewMember extends Person { //implements Comparable<CrewMember>{
 
     private FlightCrewJob job;
 
@@ -23,4 +23,19 @@ public class CrewMember extends Person{
     public String addCrewMembers() {
         return job + " " +name;
     }
+
+    /*public int compareTo(CrewMember cm) {
+        if(job.compareTo(cm.job) == 0)
+            return -1;
+        else if(job < cm.job)
+            return 1;
+        else {
+            if(name > cm.name)
+                return -1;
+            else if(name < cm.name)
+                return 1;
+            else
+                return 0;
+        }
+    }*/
 }

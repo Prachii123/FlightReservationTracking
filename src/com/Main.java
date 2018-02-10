@@ -23,7 +23,8 @@ public class Main {
         Passenger[] passenger = addPassenger();
         Flight[] flight = addFlight();
         CrewMember[] crewMembers = addCrewMember();
-       // sorting(passenger);
+        sorting(passenger);
+        sorting(flight);
 
         Flight lax045 = new Flight(45);
 
@@ -34,7 +35,7 @@ public class Main {
         Both of this for-loop and while loop gives the same result.
          */
 
-        for(Person p : lax045)
+       /* for(Person p : lax045)
             System.out.println(p.getName());
 
         Iterable<Person> laxIterable = lax045;
@@ -42,7 +43,7 @@ public class Main {
         while(persons.hasNext()) {
             Person p = persons.next();
             System.out.println(p.getName());
-        }
+        }*/
 
 
     }
@@ -96,20 +97,24 @@ public class Main {
 
     }
 
-   /* private static void sorting( Object[] obj){
+    private static void sorting( Object[] obj){
 
-        if(Passenger instanceof obj) {
-            Passenger[] p = (Passenger)obj;
+        if(obj instanceof Passenger[]) {
+            Passenger[] p = (Passenger[])obj;
             Arrays.sort(p);
+            for (Passenger xyz : p) {
+                System.out.println(xyz);
+            }
         }
 
-        if(Flight instanceof obj) {
-            Flight[] f = (Flight)obj;
+        if(obj instanceof Flight[]) {
+            Flight[] f = (Flight[])obj;
             Arrays.sort(f);
+            for (Flight xyz : f) {
+                System.out.println(xyz);
+            }
         }
-           // Passenger[] passenger = (Passenger)obj;
-
-    } */
+    }
 
 
 
