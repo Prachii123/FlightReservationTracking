@@ -1,4 +1,6 @@
-public class CargoOnlyPilot extends Pilot{
+package com.pluralsight.travel;
+
+public class CargoOnlyPilot extends Pilot {
 
     @Override
     public boolean canAccept(Flight f){

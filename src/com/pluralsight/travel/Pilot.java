@@ -1,3 +1,5 @@
+package com.pluralsight.travel;
+
 public abstract class Pilot {
     private Flight currentFlight;
 

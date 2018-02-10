@@ -1,3 +1,5 @@
+package com.pluralsight.travel;
+
 public class CargoFlight extends Flight {
     float maxCargoSpace = 1000.0f;
     float usedCargoSpace;

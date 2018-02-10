@@ -1,3 +1,5 @@
+package com.pluralsight.travel;
+
 public enum FlightCrewJob {
 
     Pilot,

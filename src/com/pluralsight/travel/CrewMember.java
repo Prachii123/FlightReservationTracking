@@ -1,3 +1,5 @@
+package com.pluralsight.travel;
+
 public class CrewMember {
 
     private FlightCrewJob job;

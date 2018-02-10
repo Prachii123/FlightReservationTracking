@@ -1,3 +1,9 @@
+package com.pluralsight.travel;//package com.pluralsight.travel;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Flight {
 
     static final int MAX_FAA_SEATS = 550;
@@ -48,7 +54,7 @@ public class Flight {
         passengers = 0;
     }
 
-    Flight(int flightNumber) {
+    public Flight(int flightNumber) {
         super();
         //this();
        this.flightNumber = flightNumber;
@@ -91,6 +97,22 @@ public class Flight {
         }
         else
             handeTooMany();
+    }
+
+    public void addPassengers(String fileName) throws IOException {
+
+        BufferedReader reader = null;
+        try{
+            reader = new BufferedReader(new FileReader(fileName));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(" ");
+                passengers = Integer.valueOf(parts[0]);
+            }
+        } finally {
+            if(reader != null)
+                reader.close();
+        }
     }
 
     private void handeTooMany() {

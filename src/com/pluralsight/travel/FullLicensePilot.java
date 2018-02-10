@@ -1,3 +1,5 @@
+package com.pluralsight.travel;
+
 public class FullLicensePilot extends Pilot {
 
     @Override
