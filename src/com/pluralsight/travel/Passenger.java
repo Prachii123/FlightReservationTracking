@@ -1,6 +1,6 @@
 package com.pluralsight.travel;
 
-public class Passenger implements Comparable{
+public class Passenger implements Comparable<Passenger>{
 
    private int checkedBags;
    private final int freeBags;
@@ -54,9 +54,8 @@ public class Passenger implements Comparable{
        this.freeBags = 0;
    }
 
-   public int compareTo(Object o) {
+   public int compareTo(Passenger p) {
 
-       Passenger p = (Passenger) o;
        if(memberLevel > p.memberLevel)
            return -1;
        else if(memberLevel < p.memberLevel)
