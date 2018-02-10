@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Flight {
+public class Flight implements Comparable{
 
     static final int MAX_FAA_SEATS = 550;
 
@@ -15,6 +15,8 @@ public class Flight {
     int totalCheckedBags;
     int maxCarryOns = seats * 2;
     int totalCaaryOns;
+
+    private int flightTime; // minutes past midnight
 
     Integer wrapperFlightNumber;
     Character wrapperflightClass;
@@ -40,6 +42,9 @@ public class Flight {
     public void setFlightNumber(int flightNumber) {
         this.flightNumber = flightNumber;
     }
+    public void setFlightTime(int flightTime) { this.flightTime = flightTime; }
+
+    public int getFlightTime() {return flightTime;}
     public char getFlightClass() {
         return flightClass;
     }
@@ -47,9 +52,10 @@ public class Flight {
         this.flightClass = flightClass;
     }
 
+
     public String getType() { return "Flight"; }
 
-    Flight() {
+    public Flight() {
         seats = 150;
         passengers = 0;
     }
@@ -181,7 +187,7 @@ public class Flight {
     /*
     this toString() is just for wrapper variable Demo/usages.
      */
-    @Override
+    /*@Override
     public String toString(){
             if(wrapperFlightNumber != null)
                 return "Flight # " + flightNumber;
@@ -189,12 +195,27 @@ public class Flight {
                 return "Flight Class " + flightClass;
             else
                 return "Flight identity not set";
-    }
+    }*/
 
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "passengers=" + passengers +
+                ", seats=" + seats +
+                ", flightNumber=" + flightNumber +
+                ", flightClass=" + flightClass +
+                ", totalCheckedBags=" + totalCheckedBags +
+                ", maxCarryOns=" + maxCarryOns +
+                ", totalCaaryOns=" + totalCaaryOns +
+                ", flightTime=" + flightTime +
+                ", wrapperFlightNumber=" + wrapperFlightNumber +
+                ", wrapperflightClass=" + wrapperflightClass +
+                '}';
+    }
 
     /*
        The base class object implements a version of equals that checks to see if two references pont to the same object. i.e.e it does reference comparision.
-     */
+    */
     @Override
     public boolean equals(Object o) {
         if(super.equals(o))
@@ -204,6 +225,17 @@ public class Flight {
         Flight other = (Flight) o;
         return flightNumber == other.flightNumber &&
                 flightClass == other.flightClass;
+
+    }
+
+    public int compareTo(Object o) {
+        Flight f = (Flight) o;
+       /* if(flightTime < f.flightTime)
+            return -1;
+        else if(flightTime > f.flightTime)
+            return 1;
+        else return 0; */
+       return flightTime - f.flightTime;
 
     }
 }

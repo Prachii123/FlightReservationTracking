@@ -1,11 +1,18 @@
 package com.pluralsight.travel;
 
-public class Passenger {
+public class Passenger implements Comparable{
 
    private int checkedBags;
    private final int freeBags;
    private double perBagFee;
 
+   private int memberLevel; // 3(platinum), 2(Gold), 1(silver)
+   private int memberDays;
+
+    public void setLevelAndDays(int level, int memberDays) {
+        this.memberLevel = level;
+        this.memberDays = memberDays;
+    }
 
    public int getCheckedBags() {
        return checkedBags;
@@ -46,4 +53,32 @@ public class Passenger {
        this.perBagFee = perBagFee;
        this.freeBags = 0;
    }
+
+   public int compareTo(Object o) {
+
+       Passenger p = (Passenger) o;
+       if(memberLevel > p.memberLevel)
+           return -1;
+       else if(memberLevel < p.memberLevel)
+           return 1;
+       else {
+           if(memberDays > p.memberDays)
+               return -1;
+           else if(memberDays < p.memberDays)
+               return 1;
+           else
+               return 0;
+       }
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "checkedBags=" + checkedBags +
+                ", freeBags=" + freeBags +
+                ", perBagFee=" + perBagFee +
+                ", memberLevel=" + memberLevel +
+                ", memberDays=" + memberDays +
+                '}';
+    }
 }
