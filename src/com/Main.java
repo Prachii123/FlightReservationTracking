@@ -7,6 +7,7 @@ import com.pluralsight.travel.Passenger;
 
 import javax.xml.crypto.dsig.spec.XPathType;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 
 
@@ -35,7 +36,7 @@ public class Main {
         Both of this for-loop and while loop gives the same result.
          */
 
-       /* for(Person p : lax045)
+       for(Person p : lax045)
             System.out.println(p.getName());
 
         Iterable<Person> laxIterable = lax045;
@@ -43,7 +44,7 @@ public class Main {
         while(persons.hasNext()) {
             Person p = persons.next();
             System.out.println(p.getName());
-        }*/
+        }
 
 
     }
@@ -99,13 +100,14 @@ public class Main {
 
     private static void sorting( Object[] obj){
 
-        if(obj instanceof Passenger[]) {
+        /*if(obj instanceof Passenger[]) {
             Passenger[] p = (Passenger[])obj;
             Arrays.sort(p);
-            for (Passenger xyz : p) {
-                System.out.println(xyz);
-            }
+           // for (Passenger xyz : p) {
+             //   System.out.println(xyz);
+            //}
         }
+
 
         if(obj instanceof Flight[]) {
             Flight[] f = (Flight[])obj;
@@ -113,6 +115,12 @@ public class Main {
             for (Flight xyz : f) {
                 System.out.println(xyz);
             }
+        }*/
+
+        Arrays.sort(obj);
+
+        for (Object o : obj) {
+            System.out.println(o);
         }
     }
 
